@@ -1,5 +1,8 @@
 #include <Arduino.h>
 #include <LedStrip.h>
+#include <LedColor.h>
+#include <ColorBlender.h>
+#include <ColorWheel.h>
 #include <Animater.h>
 
 LedStrip ledStrip;
@@ -11,5 +14,5 @@ void setup() {
 
 void loop() {
   animater.doAnimationStep(ledStrip);
-  delay(60);
+  delay(120);
 }

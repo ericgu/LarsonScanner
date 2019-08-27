@@ -78,8 +78,20 @@ class ColorBlenderTest
 
 		Assert::AreEqual(10, colorBlender.getCurrentColor().Red);
 		colorBlender.step();
-
+		
 		Assert::AreEqual(10, colorBlender.getCurrentColor().Red);
+	}
+
+	static void TestDone()
+	{
+		ColorBlender colorBlender;
+
+		colorBlender.blendToColor(LedColor(255, 0, 255), 1);
+
+		Assert::AreEqual(0, colorBlender.isDone());
+		colorBlender.step();
+
+		Assert::AreEqual(1, colorBlender.isDone());
 	}
 
 public:
@@ -90,6 +102,7 @@ public:
 		TestOneStep();
 		TestTwoSteps();
 		TestThreeStepsAndHold();
+		TestDone();
 	}
 
 };

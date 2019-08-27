@@ -46,4 +46,9 @@ class ColorBlender
 			_steps--;
 		}
 	}
+
+	int isDone()
+	{
+		return _steps == 0 ? 1 : 0;
+	}
 };

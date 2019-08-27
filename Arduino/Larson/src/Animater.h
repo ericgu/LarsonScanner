@@ -7,24 +7,18 @@ class Animater
     int _increment = 1;
 
 	int _color = 0;
+	ColorWheel _colorWheel;
 
     public:
+
+	Animater() : _colorWheel(20) {}
 
     void doAnimationStep(LedStrip &ledStrip) 
     {
         ledStrip.setColor(_last, 0, 0, 0);
-		if (_color == 0)
-		{
-			ledStrip.setColor(_current, 255, 0, 0);
-		}
-		else if (_color == 1)
-		{
-			ledStrip.setColor(_current, 0, 255, 0);
-		}
-		else
-		{
-			ledStrip.setColor(_current, 0, 0, 255);
-		}
+		LedColor ledColor = _colorWheel.getNextColor();
+
+		ledStrip.setColor(_current, ledColor.Red, ledColor.Green, ledColor.Blue);
 		ledStrip.show();
 
         _last = _current; 
@@ -33,12 +27,6 @@ class Animater
         if (_current == 0 || _current == NUM_LEDS - 1)
         {
             _increment = -_increment;
-
-			_color = _color + 1;
-			if (_color == 3)
-			{
-				_color = 0;
-			}
         }
     }
 };
