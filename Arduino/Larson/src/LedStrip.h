@@ -9,7 +9,8 @@ class LedStrip
     CRGB _leds[NUM_LEDS];
 
     public:
-    void setup() {
+    void setup()
+    {
         FastLED.addLeds<NEOPIXEL, DATA_PIN>(_leds, NUM_LEDS);
     }
 

@@ -6,7 +6,7 @@ public:
 	{
 		if (expected != actual)
 		{
-			printf("Assert: extected %d got %d\n", expected, actual);
+			printf("Assert: expected %d got %d\n", expected, actual);
 		}
 	}
 };
