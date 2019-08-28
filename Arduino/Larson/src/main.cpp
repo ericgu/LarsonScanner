@@ -3,6 +3,7 @@
 #include <LedColor.h>
 #include <ColorBlender.h>
 #include <ColorWheel.h>
+#include <FadingLedStrip.h>
 #include <Animater.h>
 
 LedStrip ledStrip;

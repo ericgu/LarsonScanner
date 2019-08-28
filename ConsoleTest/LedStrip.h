@@ -28,6 +28,11 @@ public:
 		_colors[ledNumber] = LedColor(red, green, blue);
 	}
 
+	LedColor getColor(int ledNumber)
+	{
+		return _colors[ledNumber];
+	}
+
 	void show()
 	{
 		printf("Show: ");

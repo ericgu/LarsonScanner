@@ -1,4 +1,5 @@
 #define FASTLED_ESP8266_NODEMCU_PIN_ORDER
+#define FASTLED_ALLOW_INTERRUPTS 0
 #include <fastled.h>
 
 #define NUM_LEDS 15
